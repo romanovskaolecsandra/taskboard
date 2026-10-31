@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskBoard: дошка завдань</title>
+<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <header class="site-header">
@@ -28,7 +30,68 @@
                 <summary>Що таке TaskBoard?</summary>
                 <p>TaskBoard — це зручний інструмент для керування щоденними завданнями, планування та візуалізації робочих процесів, який допомагає ефективно відстежувати прогрес.</p>
             </details>
+            <div class="cards">
+                <div class="card-item">
+                    <h3>1. Створюйте</h3>
+                    <p>Записуйте назву вашої задачі, встановлюйте дедлайни та додавайте детальний опис.</p>
+                </div>
+                <div class="card-item">
+                    <h3>2. Контролюйте</h3>
+                    <p>Обирайте рівень пріоритету, щоб фокусуватися на найважливіших справах у першу чергу.</p>
+                </div>
+                <div class="card-item">
+                    <h3>3. Виконуйте</h3>
+                    <p>Слідкуйте за виконанням завдань, отримуйте нагадування та успішно закривайте ваші таски.</p>
+                </div>
+            </div>
+
         </section>
+        <section class="card">
+            <h2>Нова задача</h2>
+            <form id="task-form" class="task-form">
+                <div class="form-row">
+                    <label class="field grow">
+                        <span>Назва</span>
+                        <input type="text" id="title" name="title" placeholder="Наприклад: підготувати звіт" required maxlength="80">
+                    </label>
+                    
+                    <label class="field">
+                        <span>Пріоритет</span>
+                        <select id="priority" name="priority">
+                            <option value="low">Низький</option>
+                            <option value="medium" selected>Середній</option>
+                            <option value="high">Високий</option>
+                        </select>
+                    </label>
+
+                    <label class="field">
+                        <span>Термін</span>
+                        <input type="date" id="deadline" name="deadline">
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <label class="field grow">
+                        <span>Електронна пошта для сповіщень</span>
+                        <input type="email" id="email" name="email" placeholder="your-email@example.com">
+                    </label>
+                </div>
+
+                <label class="field">
+                    <span>Опис</span>
+                    <textarea id="description" name="description" rows="3" placeholder="Додаткові деталі (необов'язково)"></textarea>
+                </label>
+
+                <label class="field-checkbox">
+                    <input type="checkbox" id="remember" name="remember" value="yes">
+                    <span>Нагадати про задачу</span>
+                </label>
+
+                <button type="submit" class="btn">Додати задачу</button>
+                <p id="form-message" class="form-message" role="alert"></p>
+            </form>
+        </section>
+
     </main>
 
     <footer class="site-footer">
